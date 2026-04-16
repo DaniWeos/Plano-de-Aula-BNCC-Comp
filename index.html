@@ -81,14 +81,29 @@ header img.banner{width:100%;height:72px;object-fit:cover;object-position:center
 
     <!-- PAINEL IMPORTAR JSON -->
     <div class="ai-panel">
-      <div class="ai-panel-title">⚡ Importar do Claude</div>
-      <p style="font-size:11px;color:#555;margin-bottom:8px;line-height:1.5">
-        Cole aqui o JSON gerado pelo Claude no chat e clique em <strong>Preencher</strong>.
-      </p>
+      <div class="ai-panel-title">&#9889; Preencher via JSON</div>
+
+      <div style="background:#fff;border:1px solid #c5d3f5;border-radius:8px;padding:12px;margin-bottom:12px">
+        <p style="font-size:12px;font-weight:700;color:#1a5fad;margin-bottom:8px">Como gerar o JSON da sua aula:</p>
+        <ol style="font-size:11px;color:#444;padding-left:16px;line-height:1.9">
+          <li>Grave um &#225;udio descrevendo a aula (use o gravador do celular ou qualquer app de voz).</li>
+          <li>Abra uma IA &#8212; <strong>ChatGPT, Gemini ou Copilot</strong> &#8212; e envie o &#225;udio ou a transcri&#231;&#227;o.</li>
+          <li>Use o comando abaixo para pedir o JSON:</li>
+        </ol>
+        <div style="background:#f0f4ff;border-left:3px solid #3949ab;border-radius:4px;padding:8px 10px;margin:8px 0;font-size:11px;color:#222;line-height:1.6;font-style:italic">
+          &#8220;Com base neste &#225;udio/texto, gere um JSON com os seguintes campos para um plano de aula:
+          instituicao, disciplina, habilidade, tema, assunto, data, tempo, objetivos, conhecimentos,
+          conteudo, metodologia, recursos, avaliacao, referencias.
+          Para campos de lista, separe cada item com 
+. Retorne apenas o JSON puro, sem explica&#231;&#245;es.&#8221;
+        </div>
+        <p style="font-size:11px;color:#444;margin-top:6px;line-height:1.6">4. Copie o JSON gerado, cole no campo abaixo e clique em <strong>Preencher campos</strong>.</p>
+      </div>
+
       <textarea class="ai-textarea" id="jsonInput" placeholder='{"instituicao":"...","disciplina":"...","tema":"..."}'></textarea>
       <div style="display:flex;gap:7px;margin-top:7px">
-        <button class="btn-ai" style="flex:1" onclick="importarJSON()">⚡ Preencher campos</button>
-        <button onclick="limparJSON()" style="padding:9px 14px;background:#fff;color:#777;border:1px solid #cdd4e0;border-radius:7px;font-size:12px;cursor:pointer">✕</button>
+        <button class="btn-ai" style="flex:1" onclick="importarJSON()">&#9889; Preencher campos</button>
+        <button onclick="limparJSON()" style="padding:9px 14px;background:#fff;color:#777;border:1px solid #cdd4e0;border-radius:7px;font-size:12px;cursor:pointer">&#10005;</button>
       </div>
       <div class="ai-status" id="aiStatus"></div>
     </div>
